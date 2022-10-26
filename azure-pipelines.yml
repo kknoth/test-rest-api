@@ -24,6 +24,6 @@ stages:
       displayName: Build an image
       inputs:
         command: build
-        dockerfile: 'FROM node:11-alpine  RUN mkdir -p /usr/src/app  WORKDIR /usr/src/app  COPY . .  RUN sed -i &quot;s/mongodb:\/\/localhost/mongodb:\/\/mongo/g&quot; common/services/mongoose.service.js  RUN npm install  EXPOSE 3600  CMD [&quot;npm&quot;, &quot;run&quot;, &quot;start&quot;]'
+        dockerfile: './Dockerfile'
         tags: |
           $(tag)
